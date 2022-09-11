@@ -13,6 +13,7 @@ body {
   color: whitesmoke;
   font-size: 16px;
 }
+
 h1 {
   height: 24px;
   line-height: 24px;
@@ -102,4 +103,24 @@ p {
   font-size: 18px;
   top: -30px;
   box-sizing: unset;
+}
+
+.suggestionContainer-E1_2 {
+  right: 0px;
+  padding-right: 10px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  box-shadow: none;
+  color: unset;
+  backdrop-filter: blur(60px);
+  background-color: #4a4a4a;
+  border-color: #bebebe;
+  margin-left: 0px !important;
+  flex-wrap: wrap;
+  padding: 0;
 }
