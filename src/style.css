@@ -1,4 +1,43 @@
+body {
+  background-color: #667997;
+  font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+  color: whitesmoke;
+  font-size: 16px;
+}
+h1 {
+  height: 24px;
+  line-height: 24px;
+  font-weight: ;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin-top: 10px;
+}
 .info-icon {
   width: 10px;
   height: 10px;
+}
+.label-weather {
+  height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+}
+.current-time {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.tonka-current-weather {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 40px;
+  border: 1px solid #667997;
+  border-radius: 6px;
+  background-image: url("https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Cloudy%202.png");
+  background-size: cover;
 }
