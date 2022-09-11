@@ -14,66 +14,89 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container" id="main-container">
-      <div class="tonka-current-weather">
-        <h1>Lisbon, Portugal</h1>
-        <ul>
-          <li class="label-weather">CURRENT WEATHER</li>
-          <li class="current-time">12:51 PM</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
-              alt="sunny"
-            />
-            24 ° C | F
+    <div class="container">
+      <div class="app-wrapper">
+        <div class="tonka-current-weather">
+          <h1>Lisbon, Portugal</h1>
+          <ul>
+            <li class="label-weather">CURRENT WEATHER</li>
+            <li class="current-time">12:51 PM</li>
+          </ul>
+          <div class="row mt-3">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                />
+                <div><strong>24</strong><span class="units">°C | °F</span></div>
+              </div>
+            </div>
+            <div class="col-4 w-short-description">
+              <ul>
+                <li class="short-description">Sunny</li>
+                <li>
+                  <span class="feels-like">Feels like </span
+                  ><span class="feels-like-temp">24 °C</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="col-4">
+          <p>
+            Expect partly sunny skies. The high will be <strong>25°C</strong> on
+            this humid day.
+          </p>
+          <div class="row current-other-properties">
             <ul>
-              <li>Sunny</li>
-              <li>Feels like <strong>24 °C</strong></li>
+              <li>
+                MIN-MAX TEMP
+                <img
+                  class="info-icon"
+                  src="img/info-icon.png"
+                  alt="info-icon"
+                />
+                <div class="properties-current-value">20 - 25 °C</div>
+              </li>
+              <li>
+                WIND
+                <img
+                  class="info-icon"
+                  src="img/info-icon.png"
+                  alt="info-icon"
+                />
+                <div class="properties-current-value">8 mph</div>
+              </li>
+              <li>
+                HUMIDITY
+                <img
+                  class="info-icon"
+                  src="img/info-icon.png"
+                  alt="info-icon"
+                />
+                <div class="properties-current-value">61%</div>
+              </li>
+              <li>
+                VISIBILITY
+                <img
+                  class="info-icon"
+                  src="img/info-icon.png"
+                  alt="info-icon"
+                />
+                <div class="properties-current-value">6.2 mi</div>
+              </li>
             </ul>
           </div>
         </div>
-        <p>
-          Expect partly sunny skies. The high will be <strong>25°C</strong> on
-          this humid day.
-        </p>
-        <div-row>
-          <ul>
-            <li>
-              Min-Max Temperatures
-              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
-              <div class="current-value">20 °C - 25°C</div>
-            </li>
-            <li>
-              Wind
-              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
-              <div class="current-value">8 mph</div>
-            </li>
-            <li>
-              Humidity
-              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
-              <div class="current-value">61%</div>
-            </li>
-            <li>
-              Visibility
-              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
-              <div class="current-value">6.2 mi</div>
-            </li>
-          </ul>
-        </div-row>
-      </div>
 
-      <small>
-        <a
-          href="https://github.com/nadine-leo/weather-app-project-shecodes"
-          target="_blank"
-          >Open-source code</a
-        >
-        by Nadine Antunes
-      </small>
+        <small>
+          <a
+            href="https://github.com/nadine-leo/weather-app-project-shecodes"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Nadine Antunes
+        </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>

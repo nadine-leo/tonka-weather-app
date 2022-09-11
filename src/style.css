@@ -7,7 +7,10 @@ body {
 h1 {
   height: 24px;
   line-height: 24px;
-  font-weight: ;
+}
+p {
+  margin: 20px auto;
+  line-height: 22px;
 }
 ul,
 li {
@@ -15,29 +18,81 @@ li {
   margin: 0;
   padding: 0;
 }
-ul {
-  margin-top: 10px;
+
+.current-time,
+.current-other-properties li {
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 16px;
 }
 .info-icon {
   width: 10px;
   height: 10px;
 }
-.label-weather {
+.label-weather,
+.short-description {
   height: 22px;
   line-height: 22px;
   font-weight: bold;
 }
-.current-time {
-  font-size: 12px;
-  font-weight: lighter;
-}
 
 .tonka-current-weather {
-  max-width: 650px;
-  margin: 40px auto;
-  padding: 40px;
+  padding: 30px;
   border: 1px solid #667997;
   border-radius: 6px;
   background-image: url("https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Cloudy%202.png");
   background-size: cover;
+}
+.short-description {
+  font-size: 18px;
+}
+.app-wrapper {
+  max-width: 650px;
+  margin: 40px auto 5px;
+}
+
+.weather-temperature img {
+  margin-right: 8px;
+  aspect-ratio: auto 76 / 76;
+}
+
+.weather-temperature strong {
+  font-size: 60px;
+  line-height: -1;
+  font-weight: lighter;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 18px;
+  top: -30px;
+}
+
+.w-short-description ul {
+  padding-top: 20px;
+}
+
+.current-other-properties ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.current-other-properties li {
+  display: inline-block;
+}
+.properties-current-value {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+}
+.feels-like {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  margin-right: 12px;
+}
+.feels-like-temp {
+  font-size: 14px;
+  line-height: 22px;
 }
