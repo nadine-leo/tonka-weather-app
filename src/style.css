@@ -1,3 +1,11 @@
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
 body {
   background-color: #667997;
   font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
