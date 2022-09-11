@@ -51,6 +51,7 @@ function showCurrentTemp(response) {
   let currWindSpeed = document.querySelector("#wind-speed");
   let currHumidity = document.querySelector("#humidity");
   let currVisibility = document.querySelector("#visibility");
+  let weatherIcon = document.querySelector("#icon");
 
   tempToday.innerHTML = `${currTemp}`;
   weatherDescription.innerHTML = response.data.weather[0].main;
@@ -64,6 +65,11 @@ function showCurrentTemp(response) {
   currHumidity.innerHTML = humidity;
   currVisibility.innerHTML = visibility;
   currWindSpeed.innerHTML = windSpeed;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
   convertTime(time);
 }
 

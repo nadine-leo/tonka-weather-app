@@ -101,4 +101,5 @@ p {
   position: relative;
   font-size: 18px;
   top: -30px;
+  box-sizing: unset;
 }
