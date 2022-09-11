@@ -78,6 +78,7 @@ p {
   border: 1px solid #667997;
   border-radius: 6px;
   background-image: url("https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Cloudy%202.png");
+  background-color: #334463;
   background-size: cover;
 }
 .w-short-description ul {
