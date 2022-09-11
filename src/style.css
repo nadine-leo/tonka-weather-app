@@ -1,6 +1,7 @@
 a {
   color: whitesmoke;
   text-decoration: none;
+  font-style: italic;
 }
 a:hover {
   text-decoration: underline;
