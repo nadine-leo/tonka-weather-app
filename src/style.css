@@ -54,7 +54,8 @@ p {
   opacity: 0.8;
   margin-right: 12px;
 }
-.feels-like-temp {
+.feels-like-temp,
+.w-short-description .unit {
   font-size: 14px;
   line-height: 22px;
 }

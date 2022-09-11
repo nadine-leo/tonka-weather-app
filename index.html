@@ -12,12 +12,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="app-wrapper">
         <div class="tonka-current-weather">
-          <h1>Lisbon, Portugal</h1>
+          <h1>
+            <span id="city-name">Lisbon</span> ,<span id="country-name"
+              >Portugal</span
+            >
+          </h1>
           <ul>
             <li class="label-weather">CURRENT WEATHER</li>
             <li class="current-time">12:51 PM</li>
@@ -40,14 +45,19 @@
                 <li class="short-description">Cloudy</li>
                 <li>
                   <span class="feels-like">Feels like </span
-                  ><span class="feels-like-temp">24 °C</span>
+                  ><span class="feels-like-temp">24</span
+                  ><span class="unit"> °C</span>
                 </li>
               </ul>
             </div>
           </div>
           <p>
-            Expect partly cloudy skies. The high will be
-            <strong>25°C</strong> on this humid day.
+            Expect <span class="long-description">partly cloudy skies</span>.
+            The high will be
+            <strong>
+              <span id="max-temp">25</span><span class="unit"> °C</span></strong
+            >
+            on this humid day.
           </p>
           <div class="row current-other-properties">
             <ul>
@@ -58,7 +68,10 @@
                   src="img/info-icon.png"
                   alt="info-icon"
                 />
-                <div class="properties-current-value">20 - 25 °C</div>
+                <div class="properties-current-value">
+                  <span id="curr-min-temp">20</span> -
+                  <span id="curr-max-temp">25</span>°C
+                </div>
               </li>
               <li>
                 WIND
@@ -67,7 +80,10 @@
                   src="img/info-icon.png"
                   alt="info-icon"
                 />
-                <div class="properties-current-value">8 mph</div>
+                <div class="properties-current-value">
+                  <span id="wind-speed">8</span>
+                  <span class="wind-unit">m/s</span>
+                </div>
               </li>
               <li>
                 HUMIDITY
@@ -76,7 +92,10 @@
                   src="img/info-icon.png"
                   alt="info-icon"
                 />
-                <div class="properties-current-value">61%</div>
+                <div class="properties-current-value">
+                  <span id="humidity">61</span>
+                  <span class="humidity-unit">%</span>
+                </div>
               </li>
               <li>
                 VISIBILITY
@@ -85,7 +104,10 @@
                   src="img/info-icon.png"
                   alt="info-icon"
                 />
-                <div class="properties-current-value">6.2 mi</div>
+                <div class="properties-current-value">
+                  <span id="visibility">6.2</span>
+                  <span class="visibility-unit">km</span>
+                </div>
               </li>
             </ul>
           </div>
