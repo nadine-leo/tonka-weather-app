@@ -14,7 +14,66 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>hello world</h1>
+    <div class="container" id="main-container">
+      <div class="tonka-current-weather">
+        <h1>Lisbon, Portugal</h1>
+        <ul>
+          <li>Current Weather</li>
+          <li>12:51 PM</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+              alt="sunny"
+            />
+            24 ° C | F
+          </div>
+          <div class="col-4">
+            <ul>
+              <li>Sunny</li>
+              <li>Feels like <strong>24 °C</strong></li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          Expect partly sunny skies. The high will be <strong>25°C</strong> on
+          this humid day.
+        </p>
+        <div-row>
+          <ul>
+            <li>
+              Min-Max Temperatures
+              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
+              <div class="current-value">20 °C - 25°C</div>
+            </li>
+            <li>
+              Wind
+              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
+              <div class="current-value">8 mph</div>
+            </li>
+            <li>
+              Humidity
+              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
+              <div class="current-value">61%</div>
+            </li>
+            <li>
+              Visibility
+              <img class="info-icon" src="img/info-icon.png" alt="info-icon" />
+              <div class="current-value">6.2 mi</div>
+            </li>
+          </ul>
+        </div-row>
+      </div>
+      <small>
+        <a
+          href="https://github.com/nadine-leo/weather-app-project-shecodes"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Nadine Antunes
+      </small>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
