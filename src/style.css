@@ -71,7 +71,20 @@ p {
   line-height: 22px;
   font-weight: bold;
 }
-
+.search-form input {
+  background-color: #667997;
+  color: white;
+  border: none;
+  width: calc(100% - 60px);
+  height: 32px;
+  margin-left: 6px;
+  border-radius: 45px;
+  padding-left: 10px;
+  text-align: left;
+}
+.search-form input::placeholder {
+  color: white;
+}
 .short-description {
   font-size: 18px;
 }
