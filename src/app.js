@@ -30,7 +30,6 @@ function convertTime(time) {
 //Get Current Location and info      //////////////
 
 function showCurrentTemp(response) {
-  console.log(response);
   let currTemp = Math.round(response.data.main.temp);
   let minT = Math.round(response.data.main.temp_min);
   let maxT = Math.round(response.data.main.temp_max);
