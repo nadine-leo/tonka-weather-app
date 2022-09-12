@@ -1,6 +1,3 @@
-let apiKey = "257e74eb60b897c439a9569203b9000a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
-
 //Timestamp             /////////////////////
 
 function convertTime(time) {
@@ -88,42 +85,21 @@ function callNavigator() {
 }
 
 callNavigator();
-/*function callNavigator() {
-  navigator.geolocation.getCurrentPosition(retrievePosition);
-  let cityInput = document.querySelector("#submit-search-city");
-  cityInput.value = "";
-}
-
-let buttonCurrent = document.querySelector("#current-loc-btn");
-buttonCurrent.addEventListener("click", callNavigator);
-
-callNavigator();
-*/
 
 //Weather API Location     ///////////////////////
-/*function callWeatherApi(city) {
-  ////do sth fancier with if's for different url calls
+
+function callWeatherApi(city) {
   let apiKey = "257e74eb60b897c439a9569203b9000a";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showCurrentTemp);
 }
 
-function showNewCityInfo(newCity) {
-  let apiKey = "257e74eb60b897c439a9569203b9000a";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
-  axios.get(url).then(showCurrentTemp);
-}
-
 function changeCurrentCity(event) {
   event.preventDefault();
-  let city = document.querySelector("#current-city-name");
-  let cityInput = document.querySelector("#submit-search-city");
+  let cityInput = document.querySelector("#search-input");
   let inputValue = cityInput.value;
-  city.innerHTML = inputValue;
-  console.log(inputValue);
   callWeatherApi(inputValue);
 }
 
-let submitCity = document.querySelector("form");
-submitCity.addEventListener("submit", changeCurrentCity);
-*/
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", changeCurrentCity);
