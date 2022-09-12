@@ -1,13 +1,15 @@
 //Timestamp             /////////////////////
 
 function convertTime(time) {
-  let hours = time.getHours();
+  let date = new Date(time);
+  let hours = date.getHours();
+  let min = date.getMinutes();
+
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let min = time.getMinutes();
   if (min < 10) {
-    min = `0${hours}`;
+    min = `0${min}`;
   }
   let days = [
     "Sunday",
@@ -18,7 +20,7 @@ function convertTime(time) {
     "Friday",
     "Saturday",
   ];
-  let dayWeek = days[time.getDay()];
+  let dayWeek = days[date.getDay()];
 
   let timestamp = document.querySelector(".current-time");
   timestamp.innerHTML = `${dayWeek} ${hours}:${min}`;
@@ -27,6 +29,7 @@ function convertTime(time) {
 //Get Current Location and info      //////////////
 
 function showCurrentTemp(response) {
+  console.log(response);
   let currTemp = Math.round(response.data.main.temp);
   let minT = Math.round(response.data.main.temp_min);
   let maxT = Math.round(response.data.main.temp_max);
@@ -34,7 +37,9 @@ function showCurrentTemp(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.main.humidity);
   let visibility = Math.round(response.data.visibility * 10) / 10000;
-  let time = new Date(response.data.dt * 1000);
+  let timeValueUnix = response.data.dt;
+  let timezone = response.data.timezone;
+  let timeValue = (timeValueUnix + timezone) * 1000;
 
   let tempToday = document.querySelector(".weather-temperature strong");
   let weatherDescription = document.querySelector(".short-description");
@@ -67,7 +72,7 @@ function showCurrentTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-  convertTime(time);
+  convertTime(timeValue);
 }
 
 function retrievePosition(position) {
