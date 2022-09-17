@@ -25,13 +25,12 @@
           <div class="row align-items-left">
             <div class="col-7">
               <h1>
-                <span id="city-name">Lisbon</span> ,<span id="country-name"
-                  >Portugal</span
-                >
+                <span id="city-name">Lisbon</span>,
+                <span id="country-name">Portugal</span>
               </h1>
               <ul>
                 <li class="label-weather">CURRENT WEATHER</li>
-                <li class="current-time">12:51 PM</li>
+                <li class="current-time"></li>
               </ul>
             </div>
             <div class="col-5">
@@ -78,8 +77,11 @@
                   id="icon"
                 />
                 <div>
-                  <strong>24</strong
-                  ><span class="units">°C | <a href="#">°F</a></span>
+                  <strong id="current-temperature">24</strong
+                  ><span class="units"></span>
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
                 </div>
               </div>
             </div>
@@ -113,7 +115,8 @@
                 />
                 <div class="properties-current-value">
                   <span id="curr-min-temp">20</span> -
-                  <span id="curr-max-temp">25</span>°C
+                  <span id="curr-max-temp">25</span>
+                  <span class="unit"> °C</span>
                 </div>
               </li>
               <li>
