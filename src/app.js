@@ -111,6 +111,8 @@ function changeCurrentCity(event) {
 
 function showCelsiusTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   let currentTemp = document.querySelector("#current-temperature");
   let minTemp = document.querySelector("#curr-min-temp");
@@ -129,10 +131,8 @@ function showCelsiusTemp(event) {
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  let fahrenheitMin = (celsiusMin * 9) / 5 + 32;
-  let fahrenheitMax = (celsiusMax * 9) / 5 + 32;
-  let fahrenheitFeel = (celsiusFeel * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 
   let currentTemp = document.querySelector("#current-temperature");
   let minTemp = document.querySelector("#curr-min-temp");
@@ -142,11 +142,17 @@ function showFahrenheitTemp(event) {
 
   let units = document.querySelectorAll(".unit");
 
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  let fahrenheitMin = (celsiusMin * 9) / 5 + 32;
+  let fahrenheitMax = (celsiusMax * 9) / 5 + 32;
+  let fahrenheitFeel = (celsiusFeel * 9) / 5 + 32;
+
   currentTemp.innerHTML = Math.round(fahrenheit);
   minTemp.innerHTML = Math.round(fahrenheitMin);
   maxTemp.innerHTML = Math.round(fahrenheitMax);
   otherMaxTemp.innerHTML = Math.round(fahrenheitMax);
   feelTemp.innerHTML = Math.round(fahrenheitFeel);
+
   units.forEach((placement) => {
     placement.innerHTML = " °F";
   });

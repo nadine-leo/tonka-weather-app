@@ -99,6 +99,14 @@ p {
   font-weight: lighter;
 }
 
+.weather-temperature .active {
+  font-style: normal;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+  cursor: default;
+}
 .weather-temperature .units {
   position: relative;
   font-size: 18px;
