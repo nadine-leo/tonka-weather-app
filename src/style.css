@@ -8,7 +8,7 @@ a:hover {
   color: white;
 }
 body {
-  background-color: #667997;
+  background-color: #133250;
   font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
   color: whitesmoke;
   font-size: 16px;
@@ -34,6 +34,7 @@ p {
   max-width: 650px;
   margin: 40px auto 5px;
 }
+
 .current-time,
 .current-other-properties li {
   font-size: 12px;
@@ -61,6 +62,22 @@ p {
   font-size: 14px;
   line-height: 22px;
 }
+
+.forecast-weather-card {
+  margin: 10px 15px 10px;
+  padding: 10px;
+  align-items: center;
+  width: 30;
+  height: 108px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+.forecast-wrapper {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
 .info-icon {
   width: 10px;
   height: 10px;
@@ -78,11 +95,11 @@ p {
 }
 .tonka-current-weather {
   padding: 30px;
-  border: 1px solid #667997;
+  border: none;
   border-radius: 6px;
-  background-image: url("https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Cloudy%202.png");
-  background-color: #334463;
+  background-image: url("https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Cloudy%201.png");
   background-size: cover;
+  height: 350px;
 }
 .w-short-description ul {
   padding-top: 20px;
