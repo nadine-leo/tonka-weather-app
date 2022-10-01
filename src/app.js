@@ -26,6 +26,33 @@ function convertTime(time) {
   timestamp.innerHTML = `${dayWeek} ${hours}:${min}`;
 }
 
+// Forecast /////////////////////////////
+
+function displayForecast() {
+  let forecastRow = document.querySelector(".forecast-wrapper");
+
+  forecastRow.innerHTML = `
+  <strong>5 DAY FORECAST</strong>
+          <div class="row forecast-row">
+            <div class="col-2 forecast-weather-card">
+              <div class="forecast-date">
+                Tue 20
+
+                <img
+                  class="icon-forecast"
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                  id="icon"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-max"> 22 ° </span>
+                <span class="forecast-min"> 18 ° </span>
+              </div>
+            </div>
+          </div>
+          `;
+}
 //Get Current Location and info      //////////////
 
 function showCurrentTemp(response) {
@@ -86,7 +113,6 @@ function callNavigator() {
   //let cityInput = document.querySelector("#submit-search-city");
   //cityInput.value = "";
 }
-
 //Weather API Location     ///////////////////////
 function changeUnitstoC() {
   let units = document.querySelectorAll(".unit");
@@ -174,3 +200,4 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 ///////function calls///////
 
 callNavigator();
+displayForecast();
