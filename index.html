@@ -16,6 +16,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/28213944cb.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -107,11 +111,7 @@
             <ul>
               <li>
                 MAX-MIN TEMP
-                <img
-                  class="info-icon"
-                  src="img/info-icon.png"
-                  alt="info-icon"
-                />
+                <i class="fa-solid fa-circle-info info-icon"></i>
                 <div class="properties-current-value">
                   <span id="curr-max-temp">25</span>-
                   <span id="curr-min-temp">20</span>
@@ -120,11 +120,7 @@
               </li>
               <li>
                 WIND
-                <img
-                  class="info-icon"
-                  src="img/info-icon.png"
-                  alt="info-icon"
-                />
+                <i class="fa-solid fa-circle-info info-icon"></i>
                 <div class="properties-current-value">
                   <span id="wind-speed">8</span>
                   <span class="wind-unit">m/s</span>
@@ -132,11 +128,7 @@
               </li>
               <li>
                 HUMIDITY
-                <img
-                  class="info-icon"
-                  src="img/info-icon.png"
-                  alt="info-icon"
-                />
+                <i class="fa-solid fa-circle-info info-icon"></i>
                 <div class="properties-current-value">
                   <span id="humidity">61</span>
                   <span class="humidity-unit">%</span>
@@ -144,11 +136,7 @@
               </li>
               <li>
                 VISIBILITY
-                <img
-                  class="info-icon"
-                  src="img/info-icon.png"
-                  alt="info-icon"
-                />
+                <i class="fa-solid fa-circle-info info-icon"></i>
                 <div class="properties-current-value">
                   <span id="visibility">6.2</span>
                   <span class="visibility-unit">km</span>
@@ -158,8 +146,72 @@
           </div>
         </div>
         <div class="forecast-wrapper">
-          <div class="row">
-            <strong>5 DAY FORECAST</strong>
+          <strong>5 DAY FORECAST</strong>
+          <div class="row d-inline-flex forecast-row">
+            <div class="col-2 forecast-weather-card">
+              <div class="forecast-date">
+                Tue 20
+
+                <img
+                  class="icon-forecast"
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                  id="icon"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-max"> 22 ° </span>
+                <span class="forecast-min"> 18 ° </span>
+              </div>
+            </div>
+            <div class="col-2 forecast-weather-card">
+              <div class="forecast-date">
+                Tue 20
+
+                <img
+                  class="icon-forecast"
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                  id="icon"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-max"> 22 ° </span>
+                <span class="forecast-min"> 18 ° </span>
+              </div>
+            </div>
+            <div class="col-2 forecast-weather-card">
+              <div class="forecast-date">
+                Tue 20
+
+                <img
+                  class="icon-forecast"
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                  id="icon"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-max"> 22 ° </span>
+                <span class="forecast-min"> 18 ° </span>
+              </div>
+            </div>
+            <div class="col-2 forecast-weather-card">
+              <div class="forecast-date">
+                Tue 20
+
+                <img
+                  class="icon-forecast"
+                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                  alt="sunny"
+                  id="icon"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-max"> 22 ° </span>
+                <span class="forecast-min"> 18 ° </span>
+              </div>
+            </div>
             <div class="col-2 forecast-weather-card">
               <div class="forecast-date">
                 Tue 20
