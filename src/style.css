@@ -73,9 +73,7 @@ p {
   font-size: 14px;
 }
 .forecast-row {
-  display: inline-flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
 }
 .forecast-weather-card {
   margin: 10px 10px 10px;
@@ -85,6 +83,10 @@ p {
   text-align: center;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 6px;
+  transition: all 200ms ease-in-out;
+}
+.forecast-weather-card:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 .forecast-temperature {
   margin-bottom: 0;
