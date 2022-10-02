@@ -30,28 +30,35 @@ function convertTime(time) {
 
 function displayForecast() {
   let forecastRow = document.querySelector(".forecast-wrapper");
+  let forecastHTML = `
+          <strong>5 DAY FORECAST</strong>
+          <div class="row forecast-row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-  forecastRow.innerHTML = `
-  <strong>5 DAY FORECAST</strong>
-          <div class="row forecast-row">
-            <div class="col-2 forecast-weather-card">
-              <div class="forecast-date">
-                Tue 20
-
-                <img
-                  class="icon-forecast"
-                  src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
-                  alt="sunny"
-                  id="icon"
-                />
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2 forecast-weather-card">
+                <div class="forecast-date">
+                  ${day} 20
+  
+                  <img
+                    class="icon-forecast"
+                    src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
+                    alt="sunny"
+                    id="icon"
+                  />
+                </div>
+                <div class="forecast-temperature">
+                  <span class="forecast-max"> 22 ° </span>
+                  <span class="forecast-min"> 18 ° </span>
+                </div>
               </div>
-              <div class="forecast-temperature">
-                <span class="forecast-max"> 22 ° </span>
-                <span class="forecast-min"> 18 ° </span>
-              </div>
-            </div>
-          </div>
-          `;
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastRow.innerHTML = forecastHTML;
 }
 //Get Current Location and info      //////////////
 
