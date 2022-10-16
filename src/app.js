@@ -26,37 +26,54 @@ function convertTime(time) {
   timestamp.innerHTML = `${dayWeek} ${hours}:${min}`;
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function formatDateNumber(timestamp) {
+  let date = new Date(timestamp * 1000);
+  return date.getDate();
+}
+
 // Forecast /////////////////////////////
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastData = response.data.daily;
   let forecastRow = document.querySelector(".forecast-wrapper");
   let forecastHTML = `
           <strong>5 DAY FORECAST</strong>
           <div class="row forecast-row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecastData.forEach(function (dailyData, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML += `
               <div class="col-2 forecast-weather-card">
                 <div class="forecast-date">
-                  ${day} 20
+                  ${formatDate(dailyData.dt)} ${formatDateNumber(dailyData.dt)}
   
                   <img
                     class="icon-forecast"
-                    src="https://assets.msn.com/weathermapdata/1/static/svg/72/v2/card_fix_partlysunny/SunnyDayV3.svg"
-                    alt="sunny"
-                    id="icon"
+                    src="http://openweathermap.org/img/wn/${
+                      dailyData.weather[0].icon
+                    }@2x.png"
+                    alt= "daily weather"
+                    class="icon-forecast"
                   />
                 </div>
                 <div class="forecast-temperature">
-                  <span class="forecast-max"> 22 ° </span>
-                  <span class="forecast-min"> 18 ° </span>
+                  <span class="forecast-max">${Math.round(
+                    dailyData.temp.max
+                  )} ° </span>
+                  <span class="forecast-min">${Math.round(
+                    dailyData.temp.min
+                  )} ° </span>
                 </div>
               </div>
             `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastRow.innerHTML = forecastHTML;
@@ -71,7 +88,6 @@ function getForecast(coordinates) {
 //Get Current Location and info      //////////////
 
 function showCurrentTemp(response) {
-  console.log(response);
   let tempToday = document.querySelector("#current-temperature");
   let weatherDescription = document.querySelector(".short-description");
   let cityName = document.querySelector("#city-name");
