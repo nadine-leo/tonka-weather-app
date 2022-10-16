@@ -1,7 +1,7 @@
 //Timestamp             /////////////////////
 
 function convertTime(time) {
-  let date = new Date(time);
+  let date = new Date(time * 1000);
   let hours = date.getHours();
   let min = date.getMinutes();
 
@@ -102,9 +102,7 @@ function showCurrentTemp(response) {
   let currVisibility = document.querySelector("#visibility");
   let weatherIcon = document.querySelector("#icon");
 
-  let timeValueUnix = response.data.dt;
-  let timezone = response.data.timezone;
-  let timeValue = (timeValueUnix + timezone) * 1000;
+  let timeValue = response.data.dt;
 
   let coords = response.data.coord;
 
