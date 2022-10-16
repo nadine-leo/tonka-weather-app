@@ -149,12 +149,6 @@ function callNavigator() {
   //cityInput.value = "";
 }
 //Weather API Location  & Forecast   ///////////////////////
-function changeUnitstoC() {
-  let units = document.querySelectorAll(".unit");
-  units.forEach((placement) => {
-    placement.innerHTML = " °C";
-  });
-}
 
 function callWeatherApi(city) {
   let apiKey = "257e74eb60b897c439a9569203b9000a";
@@ -167,71 +161,11 @@ function changeCurrentCity(event) {
   let cityInput = document.querySelector("#search-input");
   let inputValue = cityInput.value;
   callWeatherApi(inputValue);
-  changeUnitstoC();
 }
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
-  let currentTemp = document.querySelector("#current-temperature");
-  let minTemp = document.querySelector("#curr-min-temp");
-  let maxTemp = document.querySelector("#curr-max-temp");
-  let otherMaxTemp = document.querySelector("#max-temp");
-  let feelTemp = document.querySelector(".feels-like-temp");
-
-  currentTemp.innerHTML = Math.round(celsius);
-  minTemp.innerHTML = Math.round(celsiusMin);
-  maxTemp.innerHTML = Math.round(celsiusMax);
-  otherMaxTemp.innerHTML = Math.round(celsiusMax);
-  feelTemp.innerHTML = Math.round(celsiusFeel);
-
-  changeUnitstoC();
-}
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let currentTemp = document.querySelector("#current-temperature");
-  let minTemp = document.querySelector("#curr-min-temp");
-  let maxTemp = document.querySelector("#curr-max-temp");
-  let otherMaxTemp = document.querySelector("#max-temp");
-  let feelTemp = document.querySelector(".feels-like-temp");
-
-  let units = document.querySelectorAll(".unit");
-
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  let fahrenheitMin = (celsiusMin * 9) / 5 + 32;
-  let fahrenheitMax = (celsiusMax * 9) / 5 + 32;
-  let fahrenheitFeel = (celsiusFeel * 9) / 5 + 32;
-
-  currentTemp.innerHTML = Math.round(fahrenheit);
-  minTemp.innerHTML = Math.round(fahrenheitMin);
-  maxTemp.innerHTML = Math.round(fahrenheitMax);
-  otherMaxTemp.innerHTML = Math.round(fahrenheitMax);
-  feelTemp.innerHTML = Math.round(fahrenheitFeel);
-
-  units.forEach((placement) => {
-    placement.innerHTML = " °F";
-  });
-}
-
-let celsius = null;
-let celsiusMax = null;
-let celsiusMin = null;
-let celsiusFeel = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", changeCurrentCity);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 ///////function calls///////
 
 callNavigator();
