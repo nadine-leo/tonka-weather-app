@@ -28,7 +28,8 @@ function convertTime(time) {
 
 // Forecast /////////////////////////////
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastRow = document.querySelector(".forecast-wrapper");
   let forecastHTML = `
           <strong>5 DAY FORECAST</strong>
@@ -60,9 +61,17 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastRow.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  let apiKey = "257e74eb60b897c439a9569203b9000a";
+  let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayForecast);
+}
+
 //Get Current Location and info      //////////////
 
 function showCurrentTemp(response) {
+  console.log(response);
   let tempToday = document.querySelector("#current-temperature");
   let weatherDescription = document.querySelector(".short-description");
   let cityName = document.querySelector("#city-name");
@@ -80,6 +89,8 @@ function showCurrentTemp(response) {
   let timeValueUnix = response.data.dt;
   let timezone = response.data.timezone;
   let timeValue = (timeValueUnix + timezone) * 1000;
+
+  let coords = response.data.coord;
 
   celsius = response.data.main.temp;
   celsiusMax = response.data.main.temp_max;
@@ -105,6 +116,7 @@ function showCurrentTemp(response) {
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
 
   convertTime(timeValue);
+  getForecast(coords);
 }
 
 function retrievePosition(position) {
@@ -120,7 +132,7 @@ function callNavigator() {
   //let cityInput = document.querySelector("#submit-search-city");
   //cityInput.value = "";
 }
-//Weather API Location     ///////////////////////
+//Weather API Location  & Forecast   ///////////////////////
 function changeUnitstoC() {
   let units = document.querySelectorAll(".unit");
   units.forEach((placement) => {
@@ -207,4 +219,3 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 ///////function calls///////
 
 callNavigator();
-displayForecast();
